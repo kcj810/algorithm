@@ -1,48 +1,7 @@
-#include <stdio.h>
-/*¼³ÅÁ ¹«°Ô¸¦ ÀÔ·ÂÇØ¼­ °¢ 3kg, 5kg ºÀÁö¿¡ ´ã¾Æ ¹è´ÞÇÏ´Â ¹®Á¦. ´Ü ºÀÁö °³¼ö´Â ÃÖ¼Ò°ªÀÌ µÇ¾î¾ßÇÔ.
-´Ü °¢ ºÀÁö¿¡ ¸ðµÎ ´ãÀ» ¼ö ÀÖ¾î¾ßÇÔ. 1kg 2kg°¡ ³²À¸¸é ¾ÈµÊ. ÀÌ·¸°Ô ³ª¸ÓÁö°¡ »ý±â¸é -1À» Ãâ·Â.*/
-
-int main()
-{
-	int i, N; // NÀº ¹è´ÞÇØ¾ßÇÒ ¼³ÅÁ ¹«°Ô.
-	char ex[4] = { 1,2,4,7 }; // ¿¹¿ÜÃ³¸®. -1ÀÌ ³ª¿À´Â °ªÀº ÀÌ 4°³»Ó.
-
-	printf("¹è´ÞÇÒ ¼³ÅÁ ¹«°Ô¸¦ ÀÔ·ÂÇÏ½Ã¿À:");
-	scanf("%d", &N);
-
-	/*1. ÃÖ¼ÒºÀÁö¸¦ ±¸ÇØ¾ß ÇÏ±â ¶§¹®¿¡ 5kg ºÀÁö¸¦ ÃÖ´ëÇÑ ¸¹ÀÌ È°¿ëÇÏ´Â °ÍÀÌ Áß¿ä.
-	  2. 42kg¶ó¸é 5kg ºÀÁö¸¦ 8°³ »ç¿ë°¡´É. ±Ùµ¥ 2kg°¡ ³²±â ¶§¹®¿¡ ¾ÈµÊ.
-	  3. ±×·¡¼­ 5kg ºÀÁö¸¦ ÇÏ³ª¾¿ ÁÙ¿© ³ª°¡¸ç (ÀüÃ¼ ¹«°Ô) - (5kg¿¡ ´ãÀº ¹«°Ô)°¡ 3À¸·Î ³ª´­¶§ ³ª¸ÓÁö°¡ ¾øÀ¸¸é µÊ.*/
-
-	int b = N / 5;
-	int a = N / 3;
-
-	for (i = 0; i < 4; i++) {
-		if (N == ex[i])
-			printf("-1");
-	}
-
-
-	for (i = 0; i < N; i++) {
-		if (N - 5 * b == 0) {
-			printf("%d", b); break;
-		}
-		else if (N < 10) {
-			if (N - 3 * a == 0) {
-				printf("%d", a); break;
-			}
-			else if (N % 8 == 0) {
-				printf("%d", 2*b); break;
-			}
-		}
-		else if (N - 5 * b != 0) {
-			if ((N - b * 5) % 3 == 0) {
-				a = (N - 5 * b) / 3;
-				printf("%d", a + b); break;
-			}
-			b--;
-		}
-	}
-	return 0;
-}
-
+ï»¿1>------ ë¹Œë“œ ì‹œìž‘: í”„ë¡œì íŠ¸: start, êµ¬ì„±: Debug Win32 ------
+1>Main.c
+1>d:\ì»´í“¨í„°ê´€ë ¨ë¬¸ì„œ\do it! cì–¸ì–´ì— ê´€í•œ ê²ƒ\doit_c_source\doit_c_source\05\main.c(11): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+1>c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1274): note: 'scanf' ì„ ì–¸ì„ ì°¸ì¡°í•˜ì‹­ì‹œì˜¤.
+1>start.vcxproj -> C:\Users\Cute\source\repos\start\Debug\start.exe
+1>"start.vcxproj" í”„ë¡œì íŠ¸ë¥¼ ë¹Œë“œí–ˆìŠµë‹ˆë‹¤.
+========== ë¹Œë“œ: ì„±ê³µ 1, ì‹¤íŒ¨ 0, ìµœì‹  0, ìƒëžµ 0 ==========
